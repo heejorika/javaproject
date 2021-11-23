@@ -61,7 +61,7 @@ class login_test2 extends JFrame {
                         JOptionPane.showMessageDialog(null, "로그인 성공!");
                         new frame(true);
                         setVisible(false);
-                    }else{    //PW 틀림ㅋ
+                    }else{
                         JOptionPane.showMessageDialog(null, "패스워드가 틀렸습니다.");
                     }
                 }

@@ -73,14 +73,14 @@ class part1 extends JFrame { // 계산 종류 화면
         button_list[3].addActionListener(new ActionListener() { // 수면
             public void actionPerformed(ActionEvent e) {
                 new sleepCalc();
-                setVisible(false);
+                //setVisible(false);
             }
         });
 
         button_list[4].addActionListener(new ActionListener() { // d-day
             public void actionPerformed(ActionEvent e) {
                 new DDay();
-                setVisible(false);
+                //setVisible(false);
             }
         });
 
