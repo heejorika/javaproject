@@ -43,7 +43,7 @@ class part1 extends JFrame { // 계산 종류 화면
 
         home.addActionListener(new ActionListener() { // 버튼 액션부분 (첫화면으로)
             public void actionPerformed(ActionEvent e) {
-                new frame(false); // 메인화면으로 이동
+                new frame(true); // 메인화면으로 이동
                 setVisible(false);
             }
         });

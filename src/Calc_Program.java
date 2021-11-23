@@ -33,18 +33,14 @@ class frame extends JFrame {
         c.add(la);
         c.setLayout(null); // 레이아웃 설정
 
-        /*
-        if(loginFlag){
-            JLabel la2 = new JLabel(name_list.get(index)+" 님 환영합니다!");
-            Font font2=new Font("Aharoni 굵게", Font.BOLD, 10);  //라벨 폰트 설정
-            la2.setFont(font2);
-            la2.setHorizontalAlignment(JLabel.CENTER);
-            la2.setBounds(700, 0, 150, 50);
-            la2.setBackground(Color.GREEN);
-            la2.setOpaque(true);
-            c.add(la2,BorderLayout.NORTH);
+        if (loginFlag) {
+            JLabel hi = new JLabel("WELCOME"); // 라벨 폰트 설정
+            hi.setFont(new Font("Aharoni 굵게", Font.BOLD, 30));
+            hi.setBounds(200, 0, 500, 100);
+            hi.setHorizontalAlignment(JLabel.CENTER);
+            hi.setForeground(Color.BLUE);
+            c.add(hi);
         }
-        */
 
         for (int i = 0; i < 4; i++) {
             button_list[i] = new JButton(str_list[i]);
@@ -55,8 +51,12 @@ class frame extends JFrame {
 
         button_list[0].addActionListener(new ActionListener() { // 버튼 액션부분 (1. 계산하러가기)
             public void actionPerformed(ActionEvent e) {
-                new part1(); // 계산 종류가 있는 part1 화면으로 전환
-                //setVisible(false); // 이전 화면은 안보이게 설정
+                if (loginFlag) {
+                    new part1();
+                    setVisible(false);
+                }else{
+                    JOptionPane.showMessageDialog(null, "로그인 하세요.");
+                }
             }
         });
 
@@ -82,7 +82,6 @@ class frame extends JFrame {
         });
     }
 }
-
 
 public class Calc_Program {
     public static void main(String[] args) {
